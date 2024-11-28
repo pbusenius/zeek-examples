@@ -12,11 +12,11 @@ def read_files_log():
     try:
         df = log_to_df.create_dataframe(f"{OUTPUT_DIRECTOR}/ssh.log")
     except OSError:
-        return 
-    
+        return
+
     df = df.dropna(subset=["auth_success"])
 
-    df = df[df["auth_success"]=="T"]
+    df = df[df["auth_success"] == "T"]
 
     df = df.reset_index()
 

@@ -51,7 +51,6 @@ def clean_log_direcotry():
 
 def main():
     clean_log_direcotry()
-
     execute_zeek_command()
 
     read_files_log()

@@ -4,7 +4,7 @@ import subprocess
 from zat.log_to_dataframe import LogToDataFrame
 
 
-OUTPUT_DIRECTOR = "log"
+OUTPUT_DIRECTOR = "logs"
 
 
 def read_files_log():

@@ -21,6 +21,8 @@ def read_files_log():
 
     df = df.reset_index()
 
+    df = df[["ts", "id.orig_h", "id.resp_h", "host_key"]]
+
     print(df)
 
 

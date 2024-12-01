@@ -5,6 +5,7 @@ from zat.log_to_dataframe import LogToDataFrame
 
 
 OUTPUT_DIRECTOR = "logs"
+PCAP_FILE = "data/large.pcap"
 
 
 def read_files_log():
@@ -18,7 +19,17 @@ def read_files_log():
 
 
 def execute_zeek_command():
-    subprocess.run(["zeek", "-C", "-r", "data/test.pcap", "Log::default_logdir=logs"])
+    subprocess.run(
+        [
+            "zeek",
+            "-C",
+            "-r",
+            PCAP_FILE,
+            "frameworks/files/extract-all-files",
+            f"Log::default_logdir={OUTPUT_DIRECTOR}",
+            f"FileExtract::prefix={OUTPUT_DIRECTOR}/test",
+        ]
+    )
 
 
 def clean_log_direcotry():

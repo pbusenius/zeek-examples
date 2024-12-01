@@ -5,7 +5,7 @@ from zat.log_to_dataframe import LogToDataFrame
 
 
 OUTPUT_DIRECTOR = "logs"
-
+PCAP_FILE = "data/ftp.pcap"
 
 def read_files_log():
     log_to_df = LogToDataFrame()
@@ -34,7 +34,7 @@ def execute_zeek_command():
             "zeek",
             "-C",
             "-r",
-            "data/test.pcap",
+            PCAP_FILE,
             "frameworks/files/extract-all-files",
             f"Log::default_logdir={OUTPUT_DIRECTOR}",
             f"FileExtract::prefix={OUTPUT_DIRECTOR}/test",
